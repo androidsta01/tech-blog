@@ -16,5 +16,14 @@
       "date": "2026-01-15",
       "category": "Personal"
     }
+  ],
+  "History": [
+    {
+      "filename": "project-history.md",
+      "path": "posts/History/project-history.md",
+      "title": "Project Development History",
+      "date": "2026-01-16",
+      "category": "History"
+    }
   ]
 }
