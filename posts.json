@@ -1,0 +1,20 @@
+{
+  "Development": [
+    {
+      "filename": "hello-world.md",
+      "path": "posts/Development/hello-world.md",
+      "title": "Hello World",
+      "date": "2026-01-16",
+      "category": "Development"
+    }
+  ],
+  "Personal": [
+    {
+      "filename": "my-story.md",
+      "path": "posts/Personal/my-story.md",
+      "title": "My Coding Journey",
+      "date": "2026-01-15",
+      "category": "Personal"
+    }
+  ]
+}
