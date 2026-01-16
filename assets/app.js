@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('posts.json')
+    fetch('posts.json?t=' + new Date().getTime())
         .then(response => {
             if (!response.ok) throw new Error("Manifest not found");
             return response.json();
@@ -46,7 +46,7 @@ function renderSidebar(data) {
 }
 
 function loadPost(path) {
-    fetch(path)
+    fetch(path + '?t=' + new Date().getTime())
         .then(res => res.text())
         .then(text => {
             // Remove frontmatter
