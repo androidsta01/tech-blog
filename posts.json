@@ -1,4 +1,13 @@
 {
+  "Posting": [
+    {
+      "filename": "hosting-comparison.md",
+      "path": "posts/Posting/hosting-comparison.md",
+      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
+      "date": "2026-01-16",
+      "category": "Posting"
+    }
+  ],
   "History": [
     {
       "filename": "project-history.md",

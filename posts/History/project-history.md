@@ -47,3 +47,7 @@ A chronological log of the setup and development process for this Tech Blog.
 - **16:37:05**: WORKFLOW_RULES.md에 모든 사용자 요청 규칙 통합 (민감정보 보호, 파일 위치, 화면녹화 제한 등) `[Claude Sonnet 4.5]`
 - **16:39:01**: WORKFLOW_RULES.md에서 민감한 정보 제거 (계정명, 사용자 경로 등) `[Claude Sonnet 4.5]`
 - **16:42:08**: WORKFLOW_RULES.md에서 모든 계정명 예시 완전 제거 `[Claude Sonnet 4.5]`
+- **16:46:48**: Posting 카테고리 추가 (posts/Posting 폴더 생성) `[Claude Sonnet 4.5]`
+- **16:48:20**: 호스팅 플랫폼 비교 분석 글을 Posting 카테고리에 추가 `[Claude Sonnet 4.5]`
+- **16:49:32**: Posting 카테고리 작성 스타일 규칙 추가 (구어체 한글) 및 호스팅 비교 글 재작성 `[Claude Sonnet 4.5]`
+- **16:52:36**: Posting 작성 스타일을 ~습니다/~합니다 체로 수정 및 호스팅 비교 글 재작성 `[Claude Sonnet 4.5]`
