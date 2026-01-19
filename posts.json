@@ -5,6 +5,7 @@
       "path": "posts/Settings/workflow-rules.md",
       "title": "작업 규칙 (Workflow Rules)",
       "date": "2026-01-19",
+      "tags": [],
       "category": "Settings"
     },
     {
@@ -12,6 +13,7 @@
       "path": "posts/Settings/project-history.md",
       "title": "Project Development History",
       "date": "2026-01-16",
+      "tags": [],
       "category": "Settings"
     }
   ],
@@ -22,6 +24,12 @@
       "path": "posts/Posting/Blog/hosting-comparison.md",
       "title": "기술 블로그 호스팅, 어디서 해야 할까?",
       "date": "2026-01-16",
+      "tags": [
+        "호스팅",
+        "GitHub Pages",
+        "무료",
+        "비교"
+      ],
       "category": "Posting/Blog"
     }
   ]

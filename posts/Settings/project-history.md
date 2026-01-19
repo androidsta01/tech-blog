@@ -63,3 +63,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **18:42:18**: History 파일 정렬 및 AI 모델명(Gemini 3 Pro) 수정 `[Gemini 3 Pro]`
 - **18:43:46**: 작업 규칙(workflow-rules.md) 업데이트 (AI 모델명, 시간순 정렬, 사이드바 구조 규정 명시) `[Gemini 3 Pro]`
 - **18:46:00**: History 파일 오류 수정: 과거 작업(Claude)과 현재 작업(Gemini) 모델명 명확히 구분하여 복구 `[Gemini 3 Pro]`
+- **18:55:00**: 포스트 카드 해시태그(키워드) 기능 구현 (Frontmatter 'tags' 필드 파싱 및 UI 표시) `[Gemini 3 Pro]`

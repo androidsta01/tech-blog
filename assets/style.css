@@ -146,6 +146,23 @@ body {
     font-size: 0.875rem;
 }
 
+.post-tags {
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.post-tag {
+    font-size: 0.75rem;
+    color: #4b5563;
+    background-color: #f1f5f9;
+    padding: 0.2rem 0.5rem;
+    border-radius: 9999px;
+    /* Pill shape */
+    font-weight: 500;
+}
+
 /* Main Content */
 #main {
     flex: 1;
