@@ -55,3 +55,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **17:05:46**: Push 완료 시 블로그 링크 제공 규칙 추가 `[Claude Sonnet 4.5]`
 - **17:08:52**: Posting 파일에 작성 날짜 및 AI 모델 정보 표시 규칙 추가 `[Claude Sonnet 4.5]`
 - **17:17:28**: 프로젝트 구조 변경 (History → Settings 폴더명 변경, 규칙 파일 이동 및 블로그 포스트화) `[Claude Sonnet 4.5]`
+- **17:25:06**: 카테고리 정렬 로직 개선 (Posting 최상단, Settings 최하단 고정) `[Claude Sonnet 4.5]`

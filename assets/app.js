@@ -11,9 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
             blogData = data;
             renderCategories(data);
             // Load the first category by default
-            const firstCategory = Object.keys(data)[0];
-            if (firstCategory) {
-                showCategoryPosts(firstCategory);
+            // Load Posting category by default, or the first one available
+            let defaultCategory = 'Posting';
+            if (!data[defaultCategory] || data[defaultCategory].length === 0) {
+                // Find first non-empty category if Posting is empty/missing
+                const categories = Object.keys(data).sort((a, b) => {
+                    if (a === 'Posting') return -1;
+                    if (b === 'Posting') return 1;
+                    if (a === 'Settings') return 1;
+                    if (b === 'Settings') return -1;
+                    return a.localeCompare(b);
+                });
+                defaultCategory = categories[0];
+            }
+
+            if (defaultCategory && data[defaultCategory]) {
+                showCategoryPosts(defaultCategory);
             }
         })
         .catch(err => {
@@ -26,7 +39,15 @@ function renderCategories(data) {
     const sidebar = document.getElementById('sidebar-options');
     sidebar.innerHTML = '';
 
-    for (const category of Object.keys(data)) {
+    const categories = Object.keys(data).sort((a, b) => {
+        if (a === 'Posting') return -1;
+        if (b === 'Posting') return 1;
+        if (a === 'Settings') return 1;
+        if (b === 'Settings') return -1;
+        return a.localeCompare(b);
+    });
+
+    for (const category of categories) {
         if (data[category].length === 0) continue;
 
         const categoryBtn = document.createElement('div');
