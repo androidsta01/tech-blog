@@ -71,3 +71,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **19:35:00**: Unity 최신 버전(Unity 6) 및 2025 로드맵 분석 포스트 작성 (이미지 포함) `[Gemini 3 Pro]`
 - **19:42:00**: 이미지 엑박 문제 해결 (외부 링크를 로컬 assets/images 폴더로 다운로드하여 대체) `[Gemini 3 Pro]`
 - **19:50:00**: 이미지 경로 문제 완전 수정 (GitHub Pages 절대 주소 적용으로 경로 인식 오류 방지) `[Gemini 3 Pro]`
+- **19:55:00**: GitHub Pages 배포 설정 수정 (.nojekyll 파일 추가로 정적 파일 호스팅 오류 해결) `[Gemini 3 Pro]`
