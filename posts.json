@@ -22,13 +22,16 @@
     {
       "filename": "unity-6-features.md",
       "path": "posts/Posting/Unity/unity-6-features.md",
-      "title": "Unity 6와 2025년 로드맵 살펴보기",
+      "title": "Unity 6와 2025년 로드맵 심층 분석",
       "date": "2026-01-19",
       "tags": [
         "Unity",
         "Game Engine",
         "Unity 6",
-        "Tech"
+        "Tech",
+        "Rendering",
+        "AI",
+        "Nodes"
       ],
       "category": "Posting/Unity"
     }
