@@ -22,9 +22,11 @@ def parse_frontmatter(content):
 blog_data = {}
 
 for root, dirs, files in os.walk(POSTS_DIR):
-    category = os.path.basename(root)
     if root == POSTS_DIR:
         continue
+        
+    # Use relative path for category (e.g., "Posting/Blog" or "Settings")
+    category = os.path.relpath(root, POSTS_DIR)
     
     if category not in blog_data:
         blog_data[category] = []

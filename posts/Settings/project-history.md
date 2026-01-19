@@ -56,3 +56,5 @@ A chronological log of the setup and development process for this Tech Blog.
 - **17:08:52**: Posting 파일에 작성 날짜 및 AI 모델 정보 표시 규칙 추가 `[Claude Sonnet 4.5]`
 - **17:17:28**: 프로젝트 구조 변경 (History → Settings 폴더명 변경, 규칙 파일 이동 및 블로그 포스트화) `[Claude Sonnet 4.5]`
 - **17:25:06**: 카테고리 정렬 로직 개선 (Posting 최상단, Settings 최하단 고정) `[Claude Sonnet 4.5]`
+- **17:46:56**: Posting 카테고리 하위 구조 개편 (Posting > Blog 등 2단 구조 지원) 및 기존 글 이동 `[Claude Sonnet 4.5]`
+- **17:34:26**: 하위 카테고리 지원 구조로 개편 (Posting 하위에 Blog 추가, 계층형 사이드바 구현) `[Claude Sonnet 4.5]`
