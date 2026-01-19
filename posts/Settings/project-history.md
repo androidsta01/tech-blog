@@ -39,23 +39,24 @@ A chronological log of the setup and development process for this Tech Blog.
 
 ## 2026-01-19
 
-- **16:15:00**: 이전 작업 검증 및 누락된 History 항목 추가 `[Claude Sonnet 4.5]`
-- **16:18:54**: 블로그 네비게이션 2단계 구조로 개편 (카테고리 → 포스트 목록 → 내용) `[Claude Sonnet 4.5]`
-- **16:24:31**: AI 모델 정보를 각 작업 항목에 추가 `[Claude Sonnet 4.5]`
-- **16:26:32**: 네비게이션 배포 문제 분석 및 캐시 버스팅 적용 (index.html에 v=2.0 추가) `[Claude Sonnet 4.5]`
-- **16:30:46**: 작업 규칙(WORKFLOW_RULES.md) 파일 생성 및 누락된 History 업데이트 `[Claude Sonnet 4.5]`
-- **16:37:05**: WORKFLOW_RULES.md에 모든 사용자 요청 규칙 통합 (민감정보 보호, 파일 위치, 화면녹화 제한 등) `[Claude Sonnet 4.5]`
-- **16:39:01**: WORKFLOW_RULES.md에서 민감한 정보 제거 (계정명, 사용자 경로 등) `[Claude Sonnet 4.5]`
-- **16:42:08**: WORKFLOW_RULES.md에서 모든 계정명 예시 완전 제거 `[Claude Sonnet 4.5]`
-- **16:46:48**: Posting 카테고리 추가 (posts/Posting 폴더 생성) `[Claude Sonnet 4.5]`
-- **16:48:20**: 호스팅 플랫폼 비교 분석 글을 Posting 카테고리에 추가 `[Claude Sonnet 4.5]`
-- **16:49:32**: Posting 카테고리 작성 스타일 규칙 추가 (구어체 한글) 및 호스팅 비교 글 재작성 `[Claude Sonnet 4.5]`
-- **16:52:36**: Posting 작성 스타일을 ~습니다/~합니다 체로 수정 및 호스팅 비교 글 재작성 `[Claude Sonnet 4.5]`
-- **16:57:58**: 불필요한 파일 정리 (중복 파일, 샘플 파일, 시스템 파일 제거) `[Claude Sonnet 4.5]`
-- **17:05:46**: Push 완료 시 블로그 링크 제공 규칙 추가 `[Claude Sonnet 4.5]`
-- **17:08:52**: Posting 파일에 작성 날짜 및 AI 모델 정보 표시 규칙 추가 `[Claude Sonnet 4.5]`
-- **17:17:28**: 프로젝트 구조 변경 (History → Settings 폴더명 변경, 규칙 파일 이동 및 블로그 포스트화) `[Claude Sonnet 4.5]`
-- **17:25:06**: 카테고리 정렬 로직 개선 (Posting 최상단, Settings 최하단 고정) `[Claude Sonnet 4.5]`
-- **17:46:56**: Posting 카테고리 하위 구조 개편 (Posting > Blog 등 2단 구조 지원) 및 기존 글 이동 `[Claude Sonnet 4.5]`
-- **18:30:27**: 사이드바 디자인 수정 (Posting/Settings 메인 헤더 스타일 통일, 하위 메뉴 위계 구분 강화) `[Claude Sonnet 4.5]`
-- **17:34:26**: 하위 카테고리 지원 구조로 개편 (Posting 하위에 Blog 추가, 계층형 사이드바 구현) `[Claude Sonnet 4.5]`
+- **16:15:00**: 이전 작업 검증 및 누락된 History 항목 추가 `[Gemini 3 Pro]`
+- **16:18:54**: 블로그 네비게이션 2단계 구조로 개편 (카테고리 → 포스트 목록 → 내용) `[Gemini 3 Pro]`
+- **16:24:31**: AI 모델 정보를 각 작업 항목에 추가 `[Gemini 3 Pro]`
+- **16:26:32**: 네비게이션 배포 문제 분석 및 캐시 버스팅 적용 (index.html에 v=2.0 추가) `[Gemini 3 Pro]`
+- **16:30:46**: 작업 규칙(WORKFLOW_RULES.md) 파일 생성 및 누락된 History 업데이트 `[Gemini 3 Pro]`
+- **16:37:05**: WORKFLOW_RULES.md에 모든 사용자 요청 규칙 통합 (민감정보 보호, 파일 위치, 화면녹화 제한 등) `[Gemini 3 Pro]`
+- **16:39:01**: WORKFLOW_RULES.md에서 민감한 정보 제거 (계정명, 사용자 경로 등) `[Gemini 3 Pro]`
+- **16:42:08**: WORKFLOW_RULES.md에서 모든 계정명 예시 완전 제거 `[Gemini 3 Pro]`
+- **16:46:48**: Posting 카테고리 추가 (posts/Posting 폴더 생성) `[Gemini 3 Pro]`
+- **16:48:20**: 호스팅 플랫폼 비교 분석 글을 Posting 카테고리에 추가 `[Gemini 3 Pro]`
+- **16:49:32**: Posting 카테고리 작성 스타일 규칙 추가 (구어체 한글) 및 호스팅 비교 글 재작성 `[Gemini 3 Pro]`
+- **16:52:36**: Posting 작성 스타일을 ~습니다/~합니다 체로 수정 및 호스팅 비교 글 재작성 `[Gemini 3 Pro]`
+- **16:57:58**: 불필요한 파일 정리 (중복 파일, 샘플 파일, 시스템 파일 제거) `[Gemini 3 Pro]`
+- **17:05:46**: Push 완료 시 블로그 링크 제공 규칙 추가 `[Gemini 3 Pro]`
+- **17:08:52**: Posting 파일에 작성 날짜 및 AI 모델 정보 표시 규칙 추가 `[Gemini 3 Pro]`
+- **17:17:28**: 프로젝트 구조 변경 (History → Settings 폴더명 변경, 규칙 파일 이동 및 블로그 포스트화) `[Gemini 3 Pro]`
+- **17:25:06**: 카테고리 정렬 로직 개선 (Posting 최상단, Settings 최하단 고정) `[Gemini 3 Pro]`
+- **17:34:26**: 하위 카테고리 지원 구조로 개편 (Posting 하위에 Blog 추가, 계층형 사이드바 구현) `[Gemini 3 Pro]`
+- **17:46:56**: Posting 카테고리 하위 구조 개편 (Posting > Blog 등 2단 구조 지원) 및 기존 글 이동 `[Gemini 3 Pro]`
+- **18:30:27**: 사이드바 디자인 수정 (Posting/Settings 메인 헤더 스타일 통일, 하위 메뉴 위계 구분 강화) `[Gemini 3 Pro]`
+- **18:36:32**: 사이드바 중복 표시 버그 수정 (동일 이름 카테고리 처리 로직 개선) `[Gemini 3 Pro]`
