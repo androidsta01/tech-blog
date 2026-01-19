@@ -20,19 +20,6 @@
   "Posting": [],
   "Posting/Blog": [
     {
-      "filename": "automation-test.md",
-      "path": "posts/Posting/Blog/automation-test.md",
-      "title": "자동 배포 테스트 성공!",
-      "date": "2026-01-19",
-      "tags": [
-        "테스트",
-        "자동화",
-        "GitHub Actions",
-        "성공"
-      ],
-      "category": "Posting/Blog"
-    },
-    {
       "filename": "hosting-comparison.md",
       "path": "posts/Posting/Blog/hosting-comparison.md",
       "title": "기술 블로그 호스팅, 어디서 해야 할까?",
