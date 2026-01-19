@@ -42,3 +42,5 @@ A chronological log of the setup and development process for this Tech Blog.
 - **16:15:00**: 이전 작업 검증 및 누락된 History 항목 추가 `[Claude Sonnet 4.5]`
 - **16:18:54**: 블로그 네비게이션 2단계 구조로 개편 (카테고리 → 포스트 목록 → 내용) `[Claude Sonnet 4.5]`
 - **16:24:31**: AI 모델 정보를 각 작업 항목에 추가 `[Claude Sonnet 4.5]`
+- **16:26:32**: 네비게이션 배포 문제 분석 및 캐시 버스팅 적용 (index.html에 v=2.0 추가) `[Claude Sonnet 4.5]`
+- **16:30:46**: 작업 규칙(WORKFLOW_RULES.md) 파일 생성 및 누락된 History 업데이트 `[Claude Sonnet 4.5]`
