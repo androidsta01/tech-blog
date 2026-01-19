@@ -1,22 +1,93 @@
 # 작업 규칙 (Workflow Rules)
 
-## 필수 규칙: 모든 작업은 History에 기록
+## 규칙 1: 모든 작업은 History에 기록 (필수)
 
 **중요:** 사용자와 함께 수행한 모든 작업은 반드시 다음 두 곳에 기록되어야 합니다:
 
-### 1. 로컬 작업 로그 업데이트
-- 파일: `/Users/hugh/Desktop/Antigravity/work_log.txt`
+### 1.1 로컬 작업 로그 업데이트
+- 파일: `<project-root>/work_log.txt`
 - 형식: `[날짜 시간] 작업 내용 설명`
 - 예시: `[2026-01-19 16:30:46] 작업 규칙 파일 생성 및 누락된 History 업데이트`
 
-### 2. 블로그 History 포스트 업데이트
-- 파일: `/Users/hugh/Desktop/Antigravity/tech-blog/posts/History/project-history.md`
+### 1.2 블로그 History 포스트 업데이트
+- 파일: `<project-root>/tech-blog/posts/History/project-history.md`
 - 형식: `- **시간**: 작업 내용 설명 \`[AI 모델명]\``
 - 예시: `- **16:30:46**: 작업 규칙 파일 생성 및 누락된 History 업데이트 \`[Claude Sonnet 4.5]\``
 
-### 3. GitHub에 Push
+### 1.3 GitHub에 Push
 - 모든 History 업데이트는 즉시 GitHub에 Push하여 웹페이지에서 확인 가능하도록 함
 - 명령어: `git add posts/History/project-history.md && git commit -m "Update history" && git push`
+
+## 규칙 2: 민감한 정보 보호
+
+**절대 기록하지 말 것:**
+- 계정 ID/사용자명
+- 비밀번호
+- API 토큰
+- GitHub Personal Access Token
+- 이메일 주소
+- 기타 개인 식별 정보
+
+**History 기록 시:**
+- 민감한 정보는 일반적인 표현으로 대체
+- 예시: "GitHub 계정 연동 완료" (계정명 명시 안 함)
+- 예시: "인증 토큰 설정 완료" (토큰 값 명시 안 함)
+
+## 규칙 3: 파일 저장 위치
+
+**사용자 작업 파일:**
+- 모든 프로젝트 파일은 `<project-root>` 또는 하위 폴더에 저장
+- **절대 금지**: `.gemini/antigravity/brain/` 폴더에 사용자용 문서 저장
+- Brain 폴더는 시스템 메모리(task.md, walkthrough.md 등)만 저장
+
+**예외:**
+- `task.md`, `implementation_plan.md`, `walkthrough.md`는 brain 폴더에 저장 (시스템 파일)
+
+## 규칙 4: 명령어 실행 전 승인
+
+**자동 실행 가능:**
+- 파일 읽기/조회
+- 안전한 명령어 (ls, cat, git status 등)
+- 명시적으로 SafeToAutoRun=true로 표시된 명령어
+
+**사용자 승인 필요:**
+- 파일 삭제
+- 시스템 설정 변경
+- 패키지 설치
+- sudo 권한 필요한 작업
+- 외부 API 호출
+
+## 규칙 5: 진행 상황 표시
+
+**작업 진행 시:**
+- 가능한 경우 진행률(%) 표시
+- 예시: "[50%] 패키지 설치 중..."
+- 사용자가 작업 상태를 명확히 알 수 있도록 함
+
+**멈춤 방지:**
+- 오래 걸리는 작업은 중간 상태 업데이트
+- 사용자가 취소 버튼을 누르지 않도록 명확한 피드백 제공
+
+## 규칙 6: AI 모델 표기
+
+**History 기록 시 모델명 필수 표기:**
+- Gemini 3 Pro로 수행한 작업: `[Gemini 3 Pro]`
+- Claude Sonnet 4.5로 수행한 작업: `[Claude Sonnet 4.5]`
+- 기타 모델: 해당 모델명 정확히 표기
+
+**형식:**
+```markdown
+- **16:30:46**: 작업 내용 `[Claude Sonnet 4.5]`
+```
+
+## 규칙 7: 화면 녹화 제한
+
+**기본 원칙:**
+- 사용자가 명시적으로 요청하지 않는 한 화면 녹화 금지
+- 이유: 시스템 성능 저하 (렉 발생)
+
+**예외:**
+- 사용자가 "화면 녹화해줘" 또는 "과정을 보여줘" 등 명시적 요청 시에만 수행
 
 ## 작업 체크리스트
 
@@ -24,14 +95,10 @@
 
 - [ ] 작업 완료 후 `work_log.txt` 업데이트
 - [ ] `project-history.md`에 작업 내역 추가 (AI 모델명 포함)
+- [ ] 민감한 정보(ID, 토큰, 비밀번호) 제거 확인
 - [ ] GitHub에 Push하여 웹페이지 반영
 - [ ] 필요시 `task.md` 업데이트
-
-## AI 모델 표기 규칙
-
-- Gemini 3 Pro로 수행한 작업: `[Gemini 3 Pro]`
-- Claude Sonnet 4.5로 수행한 작업: `[Claude Sonnet 4.5]`
-- 기타 모델: 해당 모델명 정확히 표기
+- [ ] 파일이 올바른 위치에 저장되었는지 확인
 
 ## 예외 사항
 
