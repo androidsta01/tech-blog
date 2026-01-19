@@ -21,8 +21,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Build Blog Index
-        run: python scripts/build_blog.py
+      - name: Build Blog Index (Generate posts.json)
+        run: |
+          python scripts/build_blog.py
+          # Verify posts.json was generated
+          ls -l posts.json
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -30,3 +33,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
+          forced: true # Ensure clean deploy
