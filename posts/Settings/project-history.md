@@ -76,3 +76,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **20:05:00**: 이미지 파일 확장자 수정 (.jpg → .png) 및 경로 업데이트 (MIME 타입 불일치 해결) `[Gemini 3 Pro]`
 - **20:10:00**: 포스트 이미지 품질 개선 (AI 생성을 통해 Unity 6 전용 히어로 이미지 및 멀티플레이어 대시보드 UI 제작/적용) `[Gemini 3 Pro]`
 - **20:15:00**: 이미지 진본성 확보 (Unity 공식 웹사이트 직접 캡처를 통해 팩트에 기반한 정확한 자료 화면으로 교체) `[Gemini 3 Pro]`
+- **20:20:00**: 부적절한 이미지 삭제 요청 반영 (멀티플레이어 센터 예시 이미지 제거 및 본문 정리) `[Gemini 3 Pro]`
