@@ -60,3 +60,5 @@ A chronological log of the setup and development process for this Tech Blog.
 - **17:46:56**: Posting 카테고리 하위 구조 개편 (Posting > Blog 등 2단 구조 지원) 및 기존 글 이동 `[Gemini 3 Pro]`
 - **18:30:27**: 사이드바 디자인 수정 (Posting/Settings 메인 헤더 스타일 통일, 하위 메뉴 위계 구분 강화) `[Gemini 3 Pro]`
 - **18:36:32**: 사이드바 중복 표시 버그 수정 (동일 이름 카테고리 처리 로직 개선) `[Gemini 3 Pro]`
+- **18:42:18**: History 파일 정렬 및 AI 모델명(Gemini 3 Pro) 수정 `[Gemini 3 Pro]`
+- **18:43:46**: 작업 규칙(workflow-rules.md) 업데이트 (AI 모델명, 시간순 정렬, 사이드바 구조 규정 명시) `[Gemini 3 Pro]`
