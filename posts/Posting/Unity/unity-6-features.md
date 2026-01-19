@@ -8,7 +8,7 @@ tags: Unity, Game Engine, Unity 6, Tech
 
 2024년 말 정식 출시된 **Unity 6**는 2025년 현재까지 가장 안정적이고 강력한 퍼포먼스를 보여주는 버전으로 자리 잡았습니다. 단순히 새로운 기능 추가에 그치지 않고, 기존 워크플로의 효율성을 극대화하는 데 초점을 맞췄습니다.
 
-![Unity 6 Hero Image](https://androidsta01.github.io/tech-blog/assets/images/unity-6-hero.jpg)
+![Unity 6 Hero Image](https://androidsta01.github.io/tech-blog/assets/images/unity-6-hero.png)
 *(이미지 출처: Unity 공식 블로그)*
 
 ## 주요 변화와 핵심 기능
@@ -24,7 +24,7 @@ Unity 6는 그래픽 렌더링에서 큰 도약을 이뤘습니다.
 - **통합 워크플로**: 매치메이킹, 로비, 게임 서버 호스팅 설정이 하나의 대시보드에서 가능해졌습니다.
 - **Netcode for GameObjects**: 더욱 안정화된 동기화 로직을 제공하여, 인디 개발자도 쉽게 온라인 게임을 만들 수 있습니다.
 
-![Multiplayer Center](https://androidsta01.github.io/tech-blog/assets/images/unity-multiplayer.jpg)
+![Multiplayer Center](https://androidsta01.github.io/tech-blog/assets/images/unity-multiplayer.png)
 *(멀티플레이어 센터 예시)*
 
 ### 3. AI 도구의 통합 (Muse & Sentis)
