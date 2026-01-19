@@ -74,3 +74,5 @@ A chronological log of the setup and development process for this Tech Blog.
 - **19:55:00**: GitHub Pages 배포 설정 수정 (.nojekyll 파일 추가로 정적 파일 호스팅 오류 해결) `[Gemini 3 Pro]`
 - **20:00:00**: 손상된 이미지 파일 교체 (Unity 공식 로고 및 대체 이미지로 덮어쓰기) `[Gemini 3 Pro]`
 - **20:05:00**: 이미지 파일 확장자 수정 (.jpg → .png) 및 경로 업데이트 (MIME 타입 불일치 해결) `[Gemini 3 Pro]`
+- **20:10:00**: 포스트 이미지 품질 개선 (AI 생성을 통해 Unity 6 전용 히어로 이미지 및 멀티플레이어 대시보드 UI 제작/적용) `[Gemini 3 Pro]`
+- **20:15:00**: 이미지 진본성 확보 (Unity 공식 웹사이트 직접 캡처를 통해 팩트에 기반한 정확한 자료 화면으로 교체) `[Gemini 3 Pro]`
