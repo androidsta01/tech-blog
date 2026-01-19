@@ -65,3 +65,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **18:46:00**: History 파일 오류 수정: 과거 작업(Claude)과 현재 작업(Gemini) 모델명 명확히 구분하여 복구 `[Gemini 3 Pro]`
 - **18:55:00**: 포스트 카드 해시태그(키워드) 기능 구현 (Frontmatter 'tags' 필드 파싱 및 UI 표시) `[Gemini 3 Pro]`
 - **19:01:11**: 마크다운 Frontmatter 문법 오류 수정(구분선 누락) 및 캐시 갱신 (v=2.1) `[Gemini 3 Pro]`
+- **19:16:44**: GitHub Actions 배포 자동화 최적화 (Push 시 build_blog.py 자동 실행으로 폴더/파일 구조 즉시 반영) `[Gemini 3 Pro]`
