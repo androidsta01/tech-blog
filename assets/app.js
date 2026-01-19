@@ -130,9 +130,20 @@ function showCategoryPosts(category) {
     let html = `<h1>${category}</h1><div class="post-list">`;
 
     posts.forEach(post => {
+        // Generate tags HTML if tags exist
+        let tagsHtml = '';
+        if (post.tags && post.tags.length > 0) {
+            tagsHtml = `<div class="post-tags">`;
+            post.tags.forEach(tag => {
+                tagsHtml += `<span class="post-tag">#${tag}</span>`;
+            });
+            tagsHtml += `</div>`;
+        }
+
         html += `
             <div class="post-item" onclick="loadPost('${post.path}')">
                 <h3>${post.title}</h3>
+                ${tagsHtml}
                 ${post.date ? `<span class="post-date">${post.date}</span>` : ''}
             </div>
         `;

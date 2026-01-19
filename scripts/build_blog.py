@@ -38,11 +38,16 @@ for root, dirs, files in os.walk(POSTS_DIR):
                 content = f.read()
                 meta, body = parse_frontmatter(content)
                 
+                # Parse tags: comma-separated string to list
+                tags = meta.get('tags', '')
+                tag_list = [t.strip() for t in tags.split(',')] if tags else []
+
                 post = {
                     'filename': file,
                     'path': filepath,
                     'title': meta.get('title', file.replace('.md', '')),
                     'date': meta.get('date', ''),
+                    'tags': tag_list,
                     'category': category
                 }
                 blog_data[category].append(post)
