@@ -53,3 +53,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **16:52:36**: Posting 작성 스타일을 ~습니다/~합니다 체로 수정 및 호스팅 비교 글 재작성 `[Claude Sonnet 4.5]`
 - **16:57:58**: 불필요한 파일 정리 (중복 파일, 샘플 파일, 시스템 파일 제거) `[Claude Sonnet 4.5]`
 - **17:05:46**: Push 완료 시 블로그 링크 제공 규칙 추가 `[Claude Sonnet 4.5]`
+- **17:08:52**: Posting 파일에 작성 날짜 및 AI 모델 정보 표시 규칙 추가 `[Claude Sonnet 4.5]`
