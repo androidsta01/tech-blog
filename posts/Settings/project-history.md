@@ -79,3 +79,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **20:20:00**: 부적절한 이미지 삭제 요청 반영 (멀티플레이어 센터 예시 이미지 제거 및 본문 정리) `[Gemini 3 Pro]`
 - **20:30:00**: Unity 포스트 내용 전면 개편 (렌더링, 멀티플레이어, AI 기술 심층 분석 및 참고 자료 섹션 추가) `[Gemini 3 Pro]`
 - **20:40:00**: 가독성 개선을 위한 스타일 업데이트 (본문 줄간격 1.8, 단락 및 헤더 간 여백 확대, 이미지 그림자 추가) `[Gemini 3 Pro]`
+- **21:30:00**: 사용자 피드백 반영: 수직 여백 대폭 확대 (문단 간 3rem, 섹션 간 6rem 등 기존 대비 2배 이상 확보, 가독성 극대화) `[Gemini 3 Pro]`
