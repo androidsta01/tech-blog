@@ -18,6 +18,11 @@
 - 모든 History 업데이트는 즉시 GitHub에 Push하여 웹페이지에서 확인 가능하도록 함
 - 명령어: `git add posts/History/project-history.md && git commit -m "Update history" && git push`
 
+### 1.4 작업 완료 후 블로그 링크 제공
+- GitHub Push가 완료되면 사용자가 확인할 수 있도록 **클릭 가능한 블로그 링크**를 반드시 제공
+- 형식: `👉 **블로그 주소:** [https://androidsta01.github.io/tech-blog/](https://androidsta01.github.io/tech-blog/)`
+- 배포 완료까지 약 1분 소요됨을 안내
+
 ## 규칙 2: 민감한 정보 보호
 
 **절대 기록하지 말 것:**
