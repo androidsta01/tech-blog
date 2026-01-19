@@ -24,9 +24,6 @@ Unity 6는 그래픽 렌더링에서 큰 도약을 이뤘습니다.
 - **통합 워크플로**: 매치메이킹, 로비, 게임 서버 호스팅 설정이 하나의 대시보드에서 가능해졌습니다.
 - **Netcode for GameObjects**: 더욱 안정화된 동기화 로직을 제공하여, 인디 개발자도 쉽게 온라인 게임을 만들 수 있습니다.
 
-![Multiplayer Center](https://androidsta01.github.io/tech-blog/assets/images/unity-multiplayer.png)
-*(멀티플레이어 센터 예시)*
-
 ### 3. AI 도구의 통합 (Muse & Sentis)
 Unity의 AI 전략은 '도구'로서의 역할에 집중합니다.
 - **Unity Muse**: 텍스트 프롬프트로 텍스처와 스프라이트를 생성하여 프로토타이핑 속도를 높여줍니다.
