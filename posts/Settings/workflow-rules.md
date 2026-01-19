@@ -1,3 +1,8 @@
+---
+title: 작업 규칙 (Workflow Rules)
+date: 2026-01-19
+---
+
 # 작업 규칙 (Workflow Rules)
 
 ## 규칙 1: 모든 작업은 History에 기록 (필수)
@@ -10,13 +15,13 @@
 - 예시: `[2026-01-19 16:30:46] 작업 규칙 파일 생성 및 누락된 History 업데이트`
 
 ### 1.2 블로그 History 포스트 업데이트
-- 파일: `<project-root>/tech-blog/posts/History/project-history.md`
+- 파일: `<project-root>/tech-blog/posts/Settings/project-history.md`
 - 형식: `- **시간**: 작업 내용 설명 \`[AI 모델명]\``
 - 예시: `- **16:30:46**: 작업 규칙 파일 생성 및 누락된 History 업데이트 \`[Claude Sonnet 4.5]\``
 
 ### 1.3 GitHub에 Push
 - 모든 History 업데이트는 즉시 GitHub에 Push하여 웹페이지에서 확인 가능하도록 함
-- 명령어: `git add posts/History/project-history.md && git commit -m "Update history" && git push`
+- 명령어: `git add posts/Settings/project-history.md && git commit -m "Update history" && git push`
 
 ### 1.4 작업 완료 후 블로그 링크 제공
 - GitHub Push가 완료되면 사용자가 확인할 수 있도록 **클릭 가능한 블로그 링크**를 반드시 제공
