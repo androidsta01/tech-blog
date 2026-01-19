@@ -44,3 +44,6 @@ A chronological log of the setup and development process for this Tech Blog.
 - **16:24:31**: AI 모델 정보를 각 작업 항목에 추가 `[Claude Sonnet 4.5]`
 - **16:26:32**: 네비게이션 배포 문제 분석 및 캐시 버스팅 적용 (index.html에 v=2.0 추가) `[Claude Sonnet 4.5]`
 - **16:30:46**: 작업 규칙(WORKFLOW_RULES.md) 파일 생성 및 누락된 History 업데이트 `[Claude Sonnet 4.5]`
+- **16:37:05**: WORKFLOW_RULES.md에 모든 사용자 요청 규칙 통합 (민감정보 보호, 파일 위치, 화면녹화 제한 등) `[Claude Sonnet 4.5]`
+- **16:39:01**: WORKFLOW_RULES.md에서 민감한 정보 제거 (계정명, 사용자 경로 등) `[Claude Sonnet 4.5]`
+- **16:42:08**: WORKFLOW_RULES.md에서 모든 계정명 예시 완전 제거 `[Claude Sonnet 4.5]`
