@@ -35,3 +35,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **20:13:14**: 블로그 하단 푸터(Footer) 문구 추가
 - **20:16:03**: 푸터 위치 조정 (글로벌 하단 고정)
 - **20:18:28**: 작업 내역(History) 최신화 및 블로그 반영
+- **20:22:38**: 블로그 동기화 지연 문제 해결 (캐시 방지 로직 추가)
