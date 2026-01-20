@@ -93,3 +93,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **17:04:00**: 포스트 날짜 기준 정렬 기능 추가 (최신 글이 상단에 표시되도록 내림차순 정렬) `[Claude Sonnet 4.5]`
 - **17:07:00**: 배포 관리 가이드를 Deploy에서 Settings로 이동 (가이드 문서는 Settings가 더 적합) `[Claude Sonnet 4.5]`
 - **17:11:00**: 제목 일관성 규칙 추가 및 모든 포스트 제목 통일 (frontmatter title과 본문 H1 일치) `[Claude Sonnet 4.5]`
+- **17:15:00**: 릴리즈 노트 작성 규칙 추가 (제목은 버전만, 태그는 핵심 기능만 표시) `[Claude Sonnet 4.5]`
