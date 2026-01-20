@@ -87,3 +87,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **15:31:45**: 다크 모드 배경색 미적용 버그 수정 (Body 태그에 전역 배경색 변수 적용 및 트랜지션 효과 추가) `[Gemini 3 Pro]`
 - **15:50:00**: 목차(TOC) 자동 생성 기능 구현 (우측 Sticky 사이드바, 헤더 파싱 로직, 스크롤 스파이) `[Gemini 3 Pro]`
 - **16:00:00**: 목차 디자인 전면 개편 (Notion 스타일: 수직 트랙 라인, 계층별 들여쓰기, 호버 인터랙션 적용) `[Claude Sonnet 4.5]`
+- **16:18:00**: 목차 표시 로직 수정 (카테고리 목록 화면에서는 목차 숨김, 포스트 읽기 화면에서만 표시) `[Claude Sonnet 4.5]`
