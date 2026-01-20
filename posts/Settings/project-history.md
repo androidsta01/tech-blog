@@ -85,3 +85,4 @@ A chronological log of the setup and development process for this Tech Blog.
 
 - **15:26:57**: 다크 모드(Dark Mode) 기능 구현 (CSS 변수 기반 테마 시스템, 사이드바 토글 버튼, 로컬 스토리지 저장) `[Gemini 3 Pro]`
 - **15:31:45**: 다크 모드 배경색 미적용 버그 수정 (Body 태그에 전역 배경색 변수 적용 및 트랜지션 효과 추가) `[Gemini 3 Pro]`
+- **15:50:00**: 목차(TOC) 자동 생성 기능 구현 (우측 Sticky 사이드바, 헤더 파싱 로직, 스크롤 스파이) `[Gemini 3 Pro]`
