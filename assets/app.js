@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
             blogData = data;
             // Render categories and let the render function handle auto-selection via click()
             renderCategories(data);
+            // Build search index after data is loaded
+            buildSearchIndex();
         })
         .catch(err => {
             console.error(err);
