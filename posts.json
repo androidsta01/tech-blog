@@ -24,9 +24,9 @@
       "title": "배포 관리 가이드",
       "date": "2026-01-20",
       "tags": [
-        "[Guide",
+        "Guide",
         "Deployment",
-        "Git]"
+        "Git"
       ],
       "category": "Deploy"
     },
@@ -36,9 +36,9 @@
       "title": "Release v1.0 - Dark Mode & Notion-Style TOC",
       "date": "2026-01-20",
       "tags": [
-        "[Release",
+        "Release",
         "Stable",
-        "v1.0]"
+        "v1.0"
       ],
       "category": "Deploy"
     }

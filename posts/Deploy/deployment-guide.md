@@ -1,7 +1,7 @@
 ---
 title: 배포 관리 가이드
 date: 2026-01-20
-tags: [Guide, Deployment, Git]
+tags: Guide, Deployment, Git
 ---
 
 
