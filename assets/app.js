@@ -159,6 +159,12 @@ function showCategoryPosts(category) {
     const posts = blogData[category] || [];
     const contentArea = document.getElementById('content');
 
+    // Clear TOC when viewing category list
+    const tocSidebar = document.getElementById('toc-sidebar');
+    if (tocSidebar) {
+        tocSidebar.innerHTML = '';
+    }
+
     // If no posts (shouldn't happen for clickable categories, but safety first)
     if (!posts || posts.length === 0) {
         contentArea.innerHTML = `<h1>${category}</h1><p>No posts found.</p>`;
