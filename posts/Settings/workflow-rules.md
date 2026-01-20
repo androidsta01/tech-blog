@@ -196,6 +196,43 @@ date: 2026-01-19
 
 ---
 
+## 규칙 11: 릴리즈 노트 작성 규칙
+
+**Deploy 카테고리의 릴리즈 노트 작성 시:**
+
+**제목 형식:**
+- Frontmatter `title`: `Release v1.0` (버전 번호만)
+- 본문 H1: `# Release v1.0` (동일)
+
+**태그 규칙:**
+- 의미 없는 태그 금지: `Release`, `Stable`, `v1.0` 등
+- 해당 버전의 **핵심 기능**만 태그로 표시
+- 예시: `Dark Mode`, `TOC`, `Notion Style`, `Search`, `SEO`
+
+**올바른 예시:**
+```markdown
+---
+title: Release v1.0
+date: 2026-01-20
+tags: Dark Mode, TOC, Notion Style
+---
+
+# Release v1.0
+
+**릴리즈 날짜:** 2026년 1월 20일
+...
+```
+
+**잘못된 예시:**
+```markdown
+---
+title: Release v1.0 - Dark Mode & Notion-Style TOC  ❌ (제목이 너무 김)
+tags: Release, Stable, v1.0  ❌ (의미 없는 태그)
+---
+```
+
+---
+
 # 작업 규칙 (Workflow Rules)
 
 본문 내용...
