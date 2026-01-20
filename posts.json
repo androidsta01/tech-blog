@@ -1,0 +1,80 @@
+{
+  "Settings": [
+    {
+      "filename": "workflow-rules.md",
+      "path": "posts/Settings/workflow-rules.md",
+      "title": "작업 규칙 (Workflow Rules)",
+      "date": "2026-01-19",
+      "tags": [],
+      "category": "Settings"
+    },
+    {
+      "filename": "project-history.md",
+      "path": "posts/Settings/project-history.md",
+      "title": "Project Development History",
+      "date": "2026-01-16",
+      "tags": [],
+      "category": "Settings"
+    }
+  ],
+  "Deploy": [
+    {
+      "filename": "deployment-guide.md",
+      "path": "posts/Deploy/deployment-guide.md",
+      "title": "배포 관리 가이드",
+      "date": "2026-01-20",
+      "tags": [
+        "[Guide",
+        "Deployment",
+        "Git]"
+      ],
+      "category": "Deploy"
+    },
+    {
+      "filename": "v1.0-release.md",
+      "path": "posts/Deploy/v1.0-release.md",
+      "title": "Release v1.0 - Dark Mode & Notion-Style TOC",
+      "date": "2026-01-20",
+      "tags": [
+        "[Release",
+        "Stable",
+        "v1.0]"
+      ],
+      "category": "Deploy"
+    }
+  ],
+  "Posting": [],
+  "Posting/Unity": [
+    {
+      "filename": "unity-6-features.md",
+      "path": "posts/Posting/Unity/unity-6-features.md",
+      "title": "Unity 6와 2025년 로드맵 심층 분석",
+      "date": "2026-01-19",
+      "tags": [
+        "Unity",
+        "Game Engine",
+        "Unity 6",
+        "Tech",
+        "Rendering",
+        "AI",
+        "Nodes"
+      ],
+      "category": "Posting/Unity"
+    }
+  ],
+  "Posting/Blog": [
+    {
+      "filename": "hosting-comparison.md",
+      "path": "posts/Posting/Blog/hosting-comparison.md",
+      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
+      "date": "2026-01-16",
+      "tags": [
+        "호스팅",
+        "GitHub Pages",
+        "무료",
+        "비교"
+      ],
+      "category": "Posting/Blog"
+    }
+  ]
+}
