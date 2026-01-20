@@ -327,3 +327,83 @@ blockquote {
     text-align: center;
     background-color: var(--sidebar-bg);
 }
+
+/* TOC Sidebar - Notion Style */
+#toc-sidebar {
+    width: 250px;
+    padding: 3rem 1rem 2rem 0;
+    flex-shrink: 0;
+    display: none;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+/* TOC Container & Track */
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: sticky;
+    top: 5rem;
+    border-left: 1px solid var(--border-color);
+    /* Vertical Track */
+}
+
+.toc-item {
+    margin: 0;
+}
+
+.toc-item a {
+    text-decoration: none;
+    color: var(--text-muted);
+    display: block;
+    padding: 0.4rem 0.5rem 0.4rem 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    border-left: 2px solid transparent;
+    margin-left: -1px;
+    transition: all 0.15s ease-in-out;
+    border-radius: 0 4px 4px 0;
+    opacity: 0.8;
+}
+
+.toc-item a:hover {
+    color: var(--text-color);
+    background-color: var(--hover-bg);
+    opacity: 1;
+}
+
+.toc-item a.active {
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+    font-weight: 600;
+    background-color: var(--active-bg);
+    opacity: 1;
+}
+
+/* Indentation for Hierarchy */
+.toc-item.h1-item a {
+    padding-left: 1.25rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.toc-item.h2-item a {
+    padding-left: 1.25rem;
+}
+
+.toc-item.h3-item a {
+    padding-left: 2.25rem;
+    font-size: 0.85rem;
+}
+
+/* Responsive: Show TOC on large screens */
+@media (min-width: 1280px) {
+    #toc-sidebar {
+        display: block;
+    }
+
+    #main {
+        padding-right: 3rem;
+    }
+}
