@@ -91,3 +91,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **16:45:00**: Git 태그 기반 세이브 포인트 시스템 구축 (v1.0-stable-toc 태그 생성, SAVEPOINTS.md 문서화) `[Claude Sonnet 4.5]`
 - **16:47:00**: Deploy 카테고리 생성 및 배포 관리 시스템 구축 (v1.0 릴리즈 노트, 배포 가이드 문서화) `[Claude Sonnet 4.5]`
 - **17:04:00**: 포스트 날짜 기준 정렬 기능 추가 (최신 글이 상단에 표시되도록 내림차순 정렬) `[Claude Sonnet 4.5]`
+- **17:07:00**: 배포 관리 가이드를 Deploy에서 Settings로 이동 (가이드 문서는 Settings가 더 적합) `[Claude Sonnet 4.5]`
