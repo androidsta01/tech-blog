@@ -81,3 +81,4 @@ A chronological log of the setup and development process for this Tech Blog.
 - **20:40:00**: 가독성 개선을 위한 스타일 업데이트 (본문 줄간격 1.8, 단락 및 헤더 간 여백 확대, 이미지 그림자 추가) `[Gemini 3 Pro]`
 - **21:30:00**: 사용자 피드백 반영: 수직 여백 대폭 확대 (문단 간 3rem, 섹션 간 6rem 등 기존 대비 2배 이상 확보, 가독성 극대화) `[Gemini 3 Pro]`
 - **15:30:00**: 다크 모드(Dark Mode) 기능 구현 (CSS 변수 기반 테마 시스템, 사이드바 토글 버튼, 로컬 스토리지 저장) `[Gemini 3 Pro]`
+- **16:00:00**: 다크 모드 배경색 미적용 버그 수정 (Body 태그에 전역 배경색 변수 적용 및 트랜지션 효과 추가) `[Gemini 3 Pro]`
