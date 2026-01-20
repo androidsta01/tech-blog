@@ -17,6 +17,28 @@
       "category": "Settings"
     }
   ],
+  "Deploy": [
+    {
+      "filename": "v1.0-release.md",
+      "path": "posts/Deploy/v1.0-release.md",
+      "title": "Release v1.0 - Dark Mode & Notion-Style TOC",
+      "date": "2026-01-20",
+      "tags": [
+        "[Release",
+        "Stable",
+        "v1.0]"
+      ],
+      "category": "Deploy"
+    },
+    {
+      "filename": "deployment-guide.md",
+      "path": "posts/Deploy/deployment-guide.md",
+      "title": "deployment-guide",
+      "date": "",
+      "tags": [],
+      "category": "Deploy"
+    }
+  ],
   "Posting": [],
   "Posting/Unity": [
     {

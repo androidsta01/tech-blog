@@ -88,3 +88,5 @@ A chronological log of the setup and development process for this Tech Blog.
 - **15:50:00**: 목차(TOC) 자동 생성 기능 구현 (우측 Sticky 사이드바, 헤더 파싱 로직, 스크롤 스파이) `[Gemini 3 Pro]`
 - **16:00:00**: 목차 디자인 전면 개편 (Notion 스타일: 수직 트랙 라인, 계층별 들여쓰기, 호버 인터랙션 적용) `[Claude Sonnet 4.5]`
 - **16:18:00**: 목차 표시 로직 수정 (카테고리 목록 화면에서는 목차 숨김, 포스트 읽기 화면에서만 표시) `[Claude Sonnet 4.5]`
+- **16:45:00**: Git 태그 기반 세이브 포인트 시스템 구축 (v1.0-stable-toc 태그 생성, SAVEPOINTS.md 문서화) `[Claude Sonnet 4.5]`
+- **16:47:00**: Deploy 카테고리 생성 및 배포 관리 시스템 구축 (v1.0 릴리즈 노트, 배포 가이드 문서화) `[Claude Sonnet 4.5]`
