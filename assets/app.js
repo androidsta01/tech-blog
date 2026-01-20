@@ -271,3 +271,237 @@ function setupScrollSpy(headers) {
 
     headers.forEach(header => observer.observe(header));
 }
+// ===== Search Functionality =====
+
+let searchIndex = [];
+let selectedResultIndex = -1;
+
+// Initialize search
+function initSearch() {
+    const searchInput = document.getElementById('search-input');
+    const searchModal = document.getElementById('search-modal');
+
+    if (!searchInput || !searchModal) return;
+
+    // Build search index from all posts
+    buildSearchIndex();
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', (e) => {
+        // Ctrl+K or Cmd+K or / to open search
+        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+            e.preventDefault();
+            searchInput.focus();
+        } else if (e.key === '/' && document.activeElement !== searchInput) {
+            e.preventDefault();
+            searchInput.focus();
+        }
+
+        // Esc to close
+        if (e.key === 'Escape') {
+            closeSearch();
+        }
+
+        // Arrow keys for navigation
+        if (searchModal.classList.contains('hidden')) return;
+
+        if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            navigateResults(1);
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            navigateResults(-1);
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            selectResult();
+        }
+    });
+
+    // Input event for real-time search
+    let debounceTimer;
+    searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            performSearch(e.target.value);
+        }, 300);
+    });
+
+    // Focus event to show modal
+    searchInput.addEventListener('focus', () => {
+        if (searchInput.value.trim()) {
+            performSearch(searchInput.value);
+        }
+        searchModal.classList.remove('hidden');
+    });
+
+    // Click outside to close
+    searchModal.addEventListener('click', (e) => {
+        if (e.target === searchModal) {
+            closeSearch();
+        }
+    });
+}
+
+function buildSearchIndex() {
+    searchIndex = [];
+
+    // Iterate through all categories and posts
+    for (const [category, posts] of Object.entries(blogData)) {
+        posts.forEach(post => {
+            searchIndex.push({
+                title: post.title,
+                category: category,
+                path: post.path,
+                tags: post.tags || [],
+                date: post.date,
+                // We'll fetch content on demand for snippet
+            });
+        });
+    }
+}
+
+function performSearch(query) {
+    const searchResults = document.getElementById('search-results');
+    const searchModal = document.getElementById('search-modal');
+
+    if (!query.trim()) {
+        searchResults.innerHTML = '';
+        searchModal.classList.add('hidden');
+        return;
+    }
+
+    searchModal.classList.remove('hidden');
+
+    const lowerQuery = query.toLowerCase();
+    const results = [];
+
+    // Search through index
+    searchIndex.forEach(item => {
+        let score = 0;
+        let matchType = '';
+
+        // Title match (highest priority)
+        if (item.title.toLowerCase().includes(lowerQuery)) {
+            score += 10;
+            matchType = 'title';
+        }
+
+        // Tag match (medium priority)
+        if (item.tags.some(tag => tag.toLowerCase().includes(lowerQuery))) {
+            score += 5;
+            if (!matchType) matchType = 'tag';
+        }
+
+        // Category match (low priority)
+        if (item.category.toLowerCase().includes(lowerQuery)) {
+            score += 2;
+            if (!matchType) matchType = 'category';
+        }
+
+        if (score > 0) {
+            results.push({ ...item, score, matchType });
+        }
+    });
+
+    // Sort by score (descending) then by date (newest first)
+    results.sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return new Date(b.date) - new Date(a.date);
+    });
+
+    // Render results
+    renderSearchResults(results, lowerQuery);
+}
+
+function renderSearchResults(results, query) {
+    const searchResults = document.getElementById('search-results');
+    selectedResultIndex = -1;
+
+    if (results.length === 0) {
+        searchResults.innerHTML = `
+            <div class="search-no-results">
+                검색 결과가 없습니다.
+            </div>
+        `;
+        return;
+    }
+
+    const html = results.map((result, index) => {
+        const highlightedTitle = highlightText(result.title, query);
+        const tags = result.tags.length > 0
+            ? result.tags.map(tag => `<span class="post-tag">#${tag}</span>`).join(' ')
+            : '';
+
+        return `
+            <div class="search-result-item" data-index="${index}" data-path="${result.path}">
+                <div class="search-result-title">${highlightedTitle}</div>
+                <div class="search-result-category">${result.category}</div>
+                ${tags ? `<div class="search-result-snippet">${tags}</div>` : ''}
+            </div>
+        `;
+    }).join('');
+
+    searchResults.innerHTML = html;
+
+    // Add click handlers
+    document.querySelectorAll('.search-result-item').forEach(item => {
+        item.addEventListener('click', () => {
+            loadPost(item.dataset.path);
+            closeSearch();
+        });
+    });
+}
+
+function highlightText(text, query) {
+    const regex = new RegExp(`(${escapeRegex(query)})`, 'gi');
+    return text.replace(regex, '<span class="search-highlight">$1</span>');
+}
+
+function escapeRegex(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function navigateResults(direction) {
+    const items = document.querySelectorAll('.search-result-item');
+    if (items.length === 0) return;
+
+    // Remove previous selection
+    if (selectedResultIndex >= 0 && selectedResultIndex < items.length) {
+        items[selectedResultIndex].classList.remove('selected');
+    }
+
+    // Update index
+    selectedResultIndex += direction;
+
+    // Wrap around
+    if (selectedResultIndex < 0) selectedResultIndex = items.length - 1;
+    if (selectedResultIndex >= items.length) selectedResultIndex = 0;
+
+    // Add new selection
+    items[selectedResultIndex].classList.add('selected');
+    items[selectedResultIndex].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+}
+
+function selectResult() {
+    const items = document.querySelectorAll('.search-result-item');
+    if (selectedResultIndex >= 0 && selectedResultIndex < items.length) {
+        const selectedItem = items[selectedResultIndex];
+        loadPost(selectedItem.dataset.path);
+        closeSearch();
+    }
+}
+
+function closeSearch() {
+    const searchInput = document.getElementById('search-input');
+    const searchModal = document.getElementById('search-modal');
+
+    searchInput.value = '';
+    searchInput.blur();
+    searchModal.classList.add('hidden');
+    selectedResultIndex = -1;
+}
+
+// Initialize search when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    initSearch();
+});
