@@ -1,10 +1,41 @@
 :root {
     --sidebar-width: 280px;
+
+    /* Light Theme (Default) */
     --primary-color: #2563eb;
     --text-color: #1f2937;
+    --text-muted: #64748b;
     --bg-color: #ffffff;
     --sidebar-bg: #f8fafc;
     --border-color: #e2e8f0;
+    --card-bg: #ffffff;
+    --code-bg: #1e293b;
+    --code-text: #f8fafc;
+    --hover-bg: #e2e8f0;
+    --active-bg: #eff6ff;
+    --blockquote-bg: #f8fafc;
+}
+
+[data-theme="dark"] {
+    /* Dark Theme */
+    --primary-color: #60a5fa;
+    /* Lighter blue for dark mode */
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    --bg-color: #0f172a;
+    /* Slate 900 */
+    --sidebar-bg: #1e293b;
+    /* Slate 800 */
+    --border-color: #334155;
+    /* Slate 700 */
+    --card-bg: #1e293b;
+    --code-bg: #020617;
+    /* Slate 950 */
+    --code-text: #e2e8f0;
+    --hover-bg: #334155;
+    --active-bg: #1e293b;
+    /* Slightly different to distinguish? Maybe keep sidebar bg */
+    --blockquote-bg: #1e293b;
 }
 
 body {
@@ -38,6 +69,33 @@ body {
     margin-bottom: 2rem;
     color: var(--primary-color);
     padding-left: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    color: var(--text-muted);
+    transition: color 0.2s, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: var(--hover-bg);
+    color: var(--text-color);
+}
+
+.theme-toggle svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
 }
 
 .nav-group-header,
@@ -78,14 +136,14 @@ body {
 .category-btn.sub-item {
     padding-left: 2rem;
     font-size: 0.95rem;
-    color: #64748b;
+    color: var(--text-muted);
     font-weight: 500;
 }
 
 .category-btn.sub-item:hover,
 .category-btn.sub-item.active {
     color: var(--primary-color);
-    background-color: #eff6ff;
+    background-color: var(--active-bg);
     font-weight: 600;
 }
 
@@ -104,11 +162,11 @@ body {
 }
 
 .category-btn:hover {
-    background-color: #e2e8f0;
+    background-color: var(--hover-bg);
 }
 
 .category-btn.active {
-    background-color: #eff6ff;
+    background-color: var(--active-bg);
     color: var(--primary-color);
     border-left-color: var(--primary-color);
 }
@@ -122,7 +180,7 @@ body {
 
 .post-item {
     padding: 1.5rem;
-    background: var(--bg-color);
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     cursor: pointer;
@@ -131,7 +189,7 @@ body {
 
 .post-item:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transform: translateY(-2px);
 }
 
@@ -142,7 +200,7 @@ body {
 }
 
 .post-date {
-    color: #64748b;
+    color: var(--text-muted);
     font-size: 0.875rem;
 }
 
@@ -234,8 +292,8 @@ blockquote {
     border-left: 5px solid var(--primary-color);
     margin: 3rem 0;
     padding: 1.5rem 2rem;
-    background-color: #f8fafc;
-    color: #475569;
+    background-color: var(--blockquote-bg);
+    color: var(--text-muted);
     font-style: italic;
     border-radius: 0 8px 8px 0;
 }
@@ -262,7 +320,7 @@ blockquote {
 #footer {
     padding: 1rem;
     border-top: 1px solid var(--border-color);
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 0.85rem;
     text-align: center;
     background-color: var(--sidebar-bg);
