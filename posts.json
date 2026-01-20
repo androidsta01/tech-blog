@@ -1,6 +1,18 @@
 {
   "Settings": [
     {
+      "filename": "deployment-guide.md",
+      "path": "posts/Settings/deployment-guide.md",
+      "title": "배포 관리 가이드",
+      "date": "2026-01-20",
+      "tags": [
+        "Guide",
+        "Deployment",
+        "Git"
+      ],
+      "category": "Settings"
+    },
+    {
       "filename": "workflow-rules.md",
       "path": "posts/Settings/workflow-rules.md",
       "title": "작업 규칙 (Workflow Rules)",
@@ -18,18 +30,6 @@
     }
   ],
   "Deploy": [
-    {
-      "filename": "deployment-guide.md",
-      "path": "posts/Deploy/deployment-guide.md",
-      "title": "배포 관리 가이드",
-      "date": "2026-01-20",
-      "tags": [
-        "Guide",
-        "Deployment",
-        "Git"
-      ],
-      "category": "Deploy"
-    },
     {
       "filename": "v1.0-release.md",
       "path": "posts/Deploy/v1.0-release.md",
