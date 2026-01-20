@@ -171,9 +171,16 @@ function showCategoryPosts(category) {
         return;
     }
 
+    // Sort posts by date (newest first)
+    const sortedPosts = [...posts].sort((a, b) => {
+        const dateA = new Date(a.date || '1970-01-01');
+        const dateB = new Date(b.date || '1970-01-01');
+        return dateB - dateA; // Descending order (newest first)
+    });
+
     let html = `<h1>${category}</h1><div class="post-list">`;
 
-    posts.forEach(post => {
+    sortedPosts.forEach(post => {
         // Generate tags HTML if tags exist
         let tagsHtml = '';
         if (post.tags && post.tags.length > 0) {
