@@ -198,9 +198,63 @@ function loadPost(path) {
             // Remove frontmatter
             const content = text.replace(/^---[\s\S]*?---\n/, '');
             const html = marked.parse(content);
-            document.getElementById('content').innerHTML = DOMPurify.sanitize(html);
+            const contentArea = document.getElementById('content');
+            contentArea.innerHTML = DOMPurify.sanitize(html);
+
+            // Generate TOC
+            generateTOC(contentArea);
         })
         .catch(err => {
             document.getElementById('content').innerHTML = `<p>Error loading post: ${err.message}</p>`;
         });
+}
+
+function generateTOC(contentElement) {
+    const tocSidebar = document.getElementById('toc-sidebar');
+    if (!tocSidebar) return;
+
+    tocSidebar.innerHTML = '';
+    const headers = contentElement.querySelectorAll('h1, h2, h3');
+
+    if (headers.length === 0) return;
+
+    const ul = document.createElement('ul');
+    ul.className = 'toc-list';
+
+    headers.forEach((header, index) => {
+        // Generate ID if not present
+        if (!header.id) {
+            const idText = header.innerText.trim().toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-\uAC00-\uD7A3]+/g, '');
+            header.id = idText || `header-${index}`;
+        }
+
+        const li = document.createElement('li');
+        li.className = `toc-item ${header.tagName.toLowerCase()}-item`;
+
+        const a = document.createElement('a');
+        a.href = `#${header.id}`;
+        a.innerText = header.innerText;
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+
+    tocSidebar.appendChild(ul);
+
+    // Scroll Spy
+    setupScrollSpy(headers);
+}
+
+function setupScrollSpy(headers) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const activeId = entry.target.id;
+                document.querySelectorAll('.toc-item a').forEach(a => {
+                    a.classList.toggle('active', a.getAttribute('href') === `#${activeId}`);
+                });
+            }
+        });
+    }, { rootMargin: '-100px 0px -66%' });
+
+    headers.forEach(header => observer.observe(header));
 }
