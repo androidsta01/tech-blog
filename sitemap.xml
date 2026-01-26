@@ -42,14 +42,20 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://androidsta01.github.io/tech-blog/?post=posts/Posting/Trend/ai-enhanced-development.md</loc>
+        <loc>https://androidsta01.github.io/tech-blog/?post=posts/Posting/Blog/hosting-comparison.md</loc>
+        <lastmod>2026-01-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://androidsta01.github.io/tech-blog/?post=posts/Posting/Trend/trend-2026-01-26-1204.md</loc>
         <lastmod>2026-01-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://androidsta01.github.io/tech-blog/?post=posts/Posting/Blog/hosting-comparison.md</loc>
-        <lastmod>2026-01-16</lastmod>
+        <loc>https://androidsta01.github.io/tech-blog/?post=posts/Posting/Trend/ai-enhanced-development.md</loc>
+        <lastmod>2026-01-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
