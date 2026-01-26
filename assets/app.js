@@ -269,7 +269,9 @@ function renderHistoryTable() {
                     <div class="history-group">
                         <button class="history-header ${isOpen ? 'active' : ''}" onclick="toggleHistory(this)">
                             <span class="history-date">
-                                <span class="toggle-icon">▶</span>
+                                <svg class="toggle-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
                                 ${date}
                             </span>
                             <span class="history-count">${items.length} items</span>
