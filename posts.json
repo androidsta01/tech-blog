@@ -31,6 +31,18 @@
   ],
   "Deploy": [
     {
+      "filename": "release-v1.1.md",
+      "path": "posts/Deploy/release-v1.1.md",
+      "title": "Release v1.1",
+      "date": "2026-01-26",
+      "tags": [
+        "Search",
+        "History UI",
+        "Automation"
+      ],
+      "category": "Deploy"
+    },
+    {
       "filename": "v1.0-release.md",
       "path": "posts/Deploy/v1.0-release.md",
       "title": "Release v1.0",
