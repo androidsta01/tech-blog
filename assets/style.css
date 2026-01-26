@@ -406,7 +406,9 @@ blockquote {
     #main {
         padding-right: 3rem;
     }
-}/* Search Container */
+}
+
+/* Search Container */
 .search-container {
     padding: 1rem 1.5rem 0.5rem;
     border-bottom: 1px solid var(--border-color);

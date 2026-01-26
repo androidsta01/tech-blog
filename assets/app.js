@@ -241,52 +241,86 @@ function renderHistoryTable() {
                 return;
             }
 
-            // Reverse chronological order (newest first)
-            // Assuming data is already sorted or we want to sort it?
-            // The JSON is chronological. Let's show newest first if table is huge, 
-            // but usually logs are chronological. Let's keep JSON order or reverse it?
-            // The previous markdown was chronological... wait, no.
-            // The previous markdown had sections by date. 
-            // Let's reverse it to show newest updates at the top of the table? 
-            // Or keep chronological? Usually changelogs are newest first.
-            // Let's reverse it for better visibility of latest changes.
-            const sortedData = [...data].reverse();
+            // Group data by date
+            const groupedData = {};
+            data.forEach(item => {
+                if (!groupedData[item.date]) {
+                    groupedData[item.date] = [];
+                }
+                groupedData[item.date].push(item);
+            });
 
-            let html = `
-                <table class="history-table">
-                    <thead>
-                        <tr>
-                            <th>날짜</th>
-                            <th>시간</th>
-                            <th>작업 내용</th>
-                            <th>AI 모델</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-            `;
+            // Sort dates descending
+            const sortedDates = Object.keys(groupedData).sort((a, b) => new Date(b) - new Date(a));
 
-            sortedData.forEach(item => {
+            let html = '<div class="history-accordion">';
+
+            sortedDates.forEach((date, index) => {
+                const items = groupedData[date];
+                // Sort items by time descending within date
+                items.sort((a, b) => {
+                    return a.time < b.time ? 1 : -1;
+                });
+
+                // First group (latest date) is open by default
+                const isOpen = index === 0;
+
                 html += `
-                    <tr>
-                        <td>${item.date}</td>
-                        <td>${item.time}</td>
-                        <td>${item.description}</td>
-                        <td>${item.model}</td>
-                    </tr>
+                    <div class="history-group">
+                        <button class="history-header ${isOpen ? 'active' : ''}" onclick="toggleHistory(this)">
+                            <span class="history-date">
+                                <span class="toggle-icon">▶</span>
+                                ${date}
+                            </span>
+                            <span class="history-count">${items.length} items</span>
+                        </button>
+                        <div class="history-content" style="display: ${isOpen ? 'block' : 'none'}">
+                            <table class="history-table compact">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Task</th>
+                                        <th>Model</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                `;
+
+                items.forEach(item => {
+                    html += `
+                        <tr>
+                            <td class="time-col">${item.time}</td>
+                            <td class="desc-col">${item.description}</td>
+                            <td class="model-col"><span class="model-tag">${item.model}</span></td>
+                        </tr>
+                    `;
+                });
+
+                html += `
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 `;
             });
 
-            html += `
-                    </tbody>
-                </table>
-            `;
-
+            html += '</div>';
             container.innerHTML = html;
         })
         .catch(err => {
             console.error('Failed to load history:', err);
             container.innerHTML = `<p>Error loading history data.</p>`;
         });
+}
+
+function toggleHistory(header) {
+    header.classList.toggle('active');
+    const content = header.nextElementSibling;
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+    } else {
+        content.style.display = 'block';
+    }
 }
 
 function generateTOC(contentElement) {
