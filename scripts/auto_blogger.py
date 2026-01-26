@@ -66,15 +66,15 @@ def summarize_url(url, sentences_count=3):
 
 def generate_markdown(stories):
     """Generate Markdown content"""
-    today = datetime.datetime.now().strftime('%Y-%m-%d')
+    display_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
     
     content = f"""---
-title: Daily Tech Trends ({today})
-date: {today}
-tags: Trend, Daily, News
+title: Tech Trends Briefing ({display_time})
+date: {datetime.datetime.now().strftime('%Y-%m-%d')}
+tags: Trend, News, Auto
 ---
 
-# Daily Tech Trends ({today})
+# Tech Trends Briefing ({display_time})
 
 오늘의 주요 기술 소식입니다.
 
@@ -110,8 +110,8 @@ def main():
     markdown = generate_markdown(stories)
     
     # Save to file
-    today = datetime.datetime.now().strftime('%Y-%m-%d')
-    filename = f"posts/Posting/Trend/daily-trend-{today}.md"
+    timestamp = datetime.datetime.now().strftime('%Y-%m-%d-%H%M')
+    filename = f"posts/Posting/Trend/trend-{timestamp}.md"
     
     # Ensure directory exists
     os.makedirs(os.path.dirname(filename), exist_ok=True)
