@@ -74,6 +74,21 @@
       "category": "Posting/Unity"
     }
   ],
+  "Posting/Blog": [
+    {
+      "filename": "hosting-comparison.md",
+      "path": "posts/Posting/Blog/hosting-comparison.md",
+      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
+      "date": "2026-01-16",
+      "tags": [
+        "호스팅",
+        "GitHub Pages",
+        "무료",
+        "비교"
+      ],
+      "category": "Posting/Blog"
+    }
+  ],
   "Posting/Trend": [
     {
       "filename": "ai-enhanced-development.md",
@@ -88,21 +103,18 @@
         "Vibe Engineering"
       ],
       "category": "Posting/Trend"
-    }
-  ],
-  "Posting/Blog": [
+    },
     {
-      "filename": "hosting-comparison.md",
-      "path": "posts/Posting/Blog/hosting-comparison.md",
-      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
-      "date": "2026-01-16",
+      "filename": "trend-2026-01-26-1206.md",
+      "path": "posts/Posting/Trend/trend-2026-01-26-1206.md",
+      "title": "Tech Trends Briefing (2026-01-26 12:06)",
+      "date": "2026-01-26",
       "tags": [
-        "호스팅",
-        "GitHub Pages",
-        "무료",
-        "비교"
+        "Trend",
+        "News",
+        "Auto"
       ],
-      "category": "Posting/Blog"
+      "category": "Posting/Trend"
     }
   ]
 }
