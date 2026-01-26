@@ -38,9 +38,11 @@ for root, dirs, files in os.walk(POSTS_DIR):
                 content = f.read()
                 meta, body = parse_frontmatter(content)
                 
-                # Parse tags: comma-separated string to list
+                # Parse tags: handle array syntax [a, b] or simple string a, b
                 tags = meta.get('tags', '')
-                tag_list = [t.strip() for t in tags.split(',')] if tags else []
+                # Remove brackets and quotes if present
+                tags = tags.replace('[', '').replace(']', '').replace('"', '').replace("'", "")
+                tag_list = [t.strip() for t in tags.split(',')] if tags.strip() else []
 
                 post = {
                     'filename': file,
