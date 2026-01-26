@@ -285,8 +285,9 @@ function initSearch() {
 
     if (!searchInput || !searchModal) return;
 
-    // Build search index from all posts
-    buildSearchIndex();
+    if (!searchInput || !searchModal) return;
+
+    // Search index will be built after data is loaded
 
     // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
@@ -346,6 +347,8 @@ function initSearch() {
 
 function buildSearchIndex() {
     searchIndex = [];
+
+    if (!blogData) return;
 
     // Iterate through all categories and posts
     for (const [category, posts] of Object.entries(blogData)) {
