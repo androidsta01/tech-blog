@@ -51,12 +51,104 @@ document.addEventListener('DOMContentLoaded', () => {
             renderCategories(data);
             // Build search index after data is loaded
             buildSearchIndex();
+
+            // Check for deep link via Query Param (?post=...) or Hash
+            const urlParams = new URLSearchParams(window.location.search);
+            const deepLinkPost = urlParams.get('post');
+
+            if (deepLinkPost) {
+                // If deep link, load that post immediately
+                loadPost(deepLinkPost);
+            }
         })
         .catch(err => {
             console.error(err);
             document.getElementById('content').innerHTML = `<h1>Welcome to Tech Blog</h1><p>Select a category from the sidebar to get started.</p>`;
         });
 });
+
+// ===== SEO Functions =====
+
+function updateSEOMetadata(meta) {
+    // 1. Update Title
+    document.title = `${meta.title} | Tech Blog`;
+
+    // 2. Update Meta Tags
+    setMetaTag('description', meta.description || meta.title);
+    setMetaTag('keywords', (meta.tags || []).join(', '));
+    setMetaTag('author', 'Antigravity');
+
+    // 3. Update Open Graph
+    setMetaTag('og:title', meta.title, 'property');
+    setMetaTag('og:description', meta.description || meta.title, 'property');
+    setMetaTag('og:type', 'article', 'property');
+    setMetaTag('og:url', window.location.href, 'property');
+
+    // Image handling
+    let imageUrl = 'https://androidsta01.github.io/tech-blog/assets/ai_enhanced_development_thumbnail_1769420567518.png'; // Default fallback
+    if (meta.image) {
+        // If image path is relative (assets/...), make it absolute
+        if (!meta.image.startsWith('http')) {
+            imageUrl = `https://androidsta01.github.io/tech-blog/${meta.image.replace(/^\//, '')}`;
+        } else {
+            imageUrl = meta.image;
+        }
+    }
+    setMetaTag('og:image', imageUrl, 'property');
+    setMetaTag('twitter:card', 'summary_large_image');
+    setMetaTag('twitter:image', imageUrl);
+
+    // 4. Update Canonical URL
+    let link = document.querySelector("link[rel='canonical']");
+    if (!link) {
+        link = document.createElement('link');
+        link.rel = 'canonical';
+        document.head.appendChild(link);
+    }
+    // Remove query params for canonical if needed, or keep specific one?
+    // For now, keep the current href as per sitemap
+    link.href = window.location.href;
+
+    // 5. Inject JSON-LD Schema
+    injectSchema(meta, imageUrl);
+}
+
+function setMetaTag(name, content, attr = 'name') {
+    let element = document.querySelector(`meta[${attr}="${name}"]`);
+    if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attr, name);
+        document.head.appendChild(element);
+    }
+    element.setAttribute('content', content);
+}
+
+function injectSchema(meta, imageUrl) {
+    // Remove existing schema
+    const existingSchema = document.getElementById('json-ld-schema');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": meta.title,
+        "image": [imageUrl],
+        "datePublished": meta.date || new Date().toISOString().split('T')[0],
+        "dateModified": meta.date || new Date().toISOString().split('T')[0],
+        "author": {
+            "@type": "Person",
+            "name": "Antigravity",
+            "url": "https://androidsta01.github.io/tech-blog/"
+        },
+        "description": meta.description || meta.title
+    };
+
+    const script = document.createElement('script');
+    script.id = 'json-ld-schema';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+}
 
 function renderCategories(data) {
     const sidebar = document.getElementById('sidebar-options');
@@ -212,6 +304,25 @@ function loadPost(path) {
         .then(text => {
             // Remove frontmatter
             const content = text.replace(/^---[\s\S]*?---\n/, '');
+
+            // Find post metadata from blogData to update SEO
+            // We need to flatten blogData values to find the post by path
+            let postMeta = null;
+            if (blogData) {
+                Object.values(blogData).flat().forEach(p => {
+                    if (p.path === path) postMeta = p;
+                });
+            }
+
+            if (postMeta) {
+                // Update URL to match sitemap format (?post=...)
+                const newUrl = `${window.location.pathname}?post=${path}`;
+                window.history.pushState({ path: newUrl }, '', newUrl);
+
+                // Update SEO
+                updateSEOMetadata(postMeta);
+            }
+
             const html = marked.parse(content);
             const contentArea = document.getElementById('content');
             contentArea.innerHTML = DOMPurify.sanitize(html);

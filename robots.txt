@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://androidsta01.github.io/tech-blog/sitemap.xml

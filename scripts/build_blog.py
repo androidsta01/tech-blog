@@ -61,4 +61,55 @@ for category in blog_data:
 with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
     json.dump(blog_data, f, ensure_ascii=False, indent=2)
 
-print(f"Generated {OUTPUT_FILE} with {sum(len(v) for v in blog_data.values())} posts.")
+    print(f"Generated {OUTPUT_FILE} with {sum(len(v) for v in blog_data.values())} posts.")
+
+def generate_sitemap(data):
+    """Generates sitemap.xml for SEO"""
+    BASE_URL = "https://androidsta01.github.io/tech-blog"
+    sitemap_content = '<?xml version="1.0" encoding="UTF-8"?>\n'
+    sitemap_content += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+
+    # Add homepage
+    sitemap_content += f"""    <url>
+        <loc>{BASE_URL}/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>\n"""
+
+    # Add all posts
+    for category in data:
+        for post in data[category]:
+            # Construct URL (assuming simple hash routing or direct path if supported later)
+            # Currently the blog uses hash routing via loadPost() but raw markdown is fetched.
+            # To support better SEO, we might need query params or hash.
+            # However, standard sitemaps should point to crawlable URLs.
+            # Since this is a SPA, linking to the markdown file directly allows bots to see content,
+            # but ideally we want them to see the rendered page? 
+            # Static site generators usually output .html files. 
+            # For this SPA setup, we point to the main page with query param or hash?
+            # Or better, point to the raw markdown for now so at least content is indexed?
+            # NO, Googlebot executes JS now. Let's point to the SPA URL hash/query if possible.
+            # But standard practice for this simple setup: point to index.html assuming JS navigation.
+            # Actually, `?post=path/to/post` handling in `app.js` is best for SEO deep linking.
+            # I will modify `app.js` later to handle query params. Use query param style here.
+            
+            # Use query parameter for deep linking (requires app.js update)
+            safe_path = post['path'].replace(' ', '%20')
+            url = f"{BASE_URL}/?post={safe_path}"
+            
+            lastmod = post['date'] if post['date'] else '2026-01-26'
+            
+            sitemap_content += f"""    <url>
+        <loc>{url}</loc>
+        <lastmod>{lastmod}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>\n"""
+
+    sitemap_content += '</urlset>'
+    
+    with open('sitemap.xml', 'w', encoding='utf-8') as f:
+        f.write(sitemap_content)
+    print("Generated sitemap.xml")
+
+generate_sitemap(blog_data)
