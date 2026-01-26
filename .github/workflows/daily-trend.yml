@@ -1,0 +1,46 @@
+name: Daily Tech Trend Post
+
+on:
+  schedule:
+    # Runs at 00:00 UTC daily (09:00 KST)
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r scripts/requirements.txt
+        python -m nltk.downloader punkt
+
+    - name: Run Auto Blogger Script
+      run: python scripts/auto_blogger.py
+
+    - name: Update Blog Index
+      run: python scripts/build_blog.py
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v6
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Auto-generated daily trend post"
+        title: "[Daily] Tech Trend Post - ${{ steps.date.outputs.date }}"
+        body: "Automated daily tech trend summary."
+        branch: "daily-trend-auto"
+        base: main
