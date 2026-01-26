@@ -490,5 +490,11 @@
         "time": "16:53:00",
         "description": "History 포스트를 Table 포맷으로 변환 (가독성 개선)",
         "model": "Placeholder M8"
+    },
+    {
+        "date": "2026-01-26",
+        "time": "17:45:00",
+        "description": "Project History 가독성 개선: 날짜별 접기/펼치기(Accordion) UI 구현 및 자동화 로직 적용",
+        "model": "Placesholder M8"
     }
 ]
