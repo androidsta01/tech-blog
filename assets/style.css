@@ -484,6 +484,147 @@ blockquote {
     opacity: 0;
 }
 
+/* History Accordion Styles */
+.history-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+}
+
+.history-group {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--card-bg);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.history-group:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    transform: translateY(-2px);
+}
+
+.history-header {
+    width: 100%;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--sidebar-bg);
+    /* subtle contrast */
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.history-date {
+    font-weight: 700;
+    color: var(--text-color);
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.toggle-icon {
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.history-header.active .toggle-icon {
+    transform: rotate(90deg);
+    color: var(--primary-color);
+}
+
+.history-count {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--hover-bg);
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+}
+
+[data-theme="dark"] .history-count {
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.history-content {
+    background: var(--bg-color);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Compact History Table */
+.history-table.compact {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.history-table.compact th {
+    display: none;
+    /* Hide internal headers for cleaner look */
+}
+
+.history-table.compact td {
+    padding: 1rem 1.75rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    vertical-align: top;
+}
+
+.history-table.compact tr:last-child td {
+    border-bottom: none;
+}
+
+.history-table.compact tr:hover td {
+    background: rgba(59, 130, 246, 0.03);
+}
+
+/* Columns */
+.time-col {
+    width: 90px;
+    font-family: monospace;
+    /* 'SF Mono', 'Fira Code', ... will inherit */
+    font-size: 0.85rem;
+    color: var(--text-muted) !important;
+    padding-top: 1.1rem !important;
+    /* Visual alignment with text */
+}
+
+.desc-col {
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.model-col {
+    width: 140px;
+    text-align: right;
+    padding-top: 1.1rem !important;
+}
+
+.model-tag {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: var(--hover-bg);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.2s;
+}
+
+.model-tag:hover {
+    color: var(--primary-color);
+    background: var(--active-bg);
+}
+
 .search-results-container {
     width: 90%;
     max-width: 600px;
