@@ -218,9 +218,74 @@ function loadPost(path) {
 
             // Generate TOC
             generateTOC(contentArea);
+
+            // Check if this is the project history page and render table
+            if (path.includes('project-history.md')) {
+                renderHistoryTable();
+            }
         })
         .catch(err => {
             document.getElementById('content').innerHTML = `<p>Error loading post: ${err.message}</p>`;
+        });
+}
+
+function renderHistoryTable() {
+    const container = document.getElementById('history-table-container');
+    if (!container) return;
+
+    fetch('assets/history.json?t=' + new Date().getTime())
+        .then(res => res.json())
+        .then(data => {
+            if (!data || data.length === 0) {
+                container.innerHTML = '<p>No history data available.</p>';
+                return;
+            }
+
+            // Reverse chronological order (newest first)
+            // Assuming data is already sorted or we want to sort it?
+            // The JSON is chronological. Let's show newest first if table is huge, 
+            // but usually logs are chronological. Let's keep JSON order or reverse it?
+            // The previous markdown was chronological... wait, no.
+            // The previous markdown had sections by date. 
+            // Let's reverse it to show newest updates at the top of the table? 
+            // Or keep chronological? Usually changelogs are newest first.
+            // Let's reverse it for better visibility of latest changes.
+            const sortedData = [...data].reverse();
+
+            let html = `
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>날짜</th>
+                            <th>시간</th>
+                            <th>작업 내용</th>
+                            <th>AI 모델</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            sortedData.forEach(item => {
+                html += `
+                    <tr>
+                        <td>${item.date}</td>
+                        <td>${item.time}</td>
+                        <td>${item.description}</td>
+                        <td>${item.model}</td>
+                    </tr>
+                `;
+            });
+
+            html += `
+                    </tbody>
+                </table>
+            `;
+
+            container.innerHTML = html;
+        })
+        .catch(err => {
+            console.error('Failed to load history:', err);
+            container.innerHTML = `<p>Error loading history data.</p>`;
         });
 }
 
