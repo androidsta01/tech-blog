@@ -35,12 +35,14 @@ jobs:
     - name: Update Blog Index
       run: python scripts/build_blog.py
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v6
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: "Auto-generated daily trend post"
-        title: "[Daily] Tech Trend Post - ${{ steps.date.outputs.date }}"
-        body: "Automated daily tech trend summary."
-        branch: "daily-trend-auto"
-        base: main
+    - name: Commit and Push
+      run: |
+        git config user.name "androidsta01"
+        git config user.email "androidsta01@users.noreply.github.com"
+        git add posts/Posting/Trend/*.md posts.json
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Auto-generated trend post $(date +'%Y-%m-%d %H:%M')"
+          git push
+        fi
