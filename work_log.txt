@@ -8,3 +8,19 @@
   - Generated 'posts/Posting/Trend/trend-2026-01-27-1811.md'.
   - Updated 'assets/history.json' with fix details.
   - Forced push to main branch (resolved conflicts).
+
+[2026-01-27 18:30] Auto-Blogger Dependency Fix
+- Problem Identified: Summarization failing due to missing dependencies
+  - Missing 'punkt_tab' NLTK tokenizer
+  - Missing 'numpy' package (required by sumy LSA algorithm)
+- Fix Applied:
+  - Updated 'scripts/auto_blogger.py' to download 'punkt_tab'
+  - Updated '.github/workflows/daily-trend.yml' to install 'punkt_tab'
+  - Added 'numpy' to 'scripts/requirements.txt'
+  - Installed numpy locally via 'python3 -m pip install numpy'
+- Verification:
+  - Generated 'posts/Posting/Trend/trend-2026-01-27-1827.md' with working summaries
+  - Cleaned up 4 broken test files (1718, 1811, 1815, 1818)
+  - Updated 'assets/history.json' with fix details
+  - Pushed to main branch successfully
+- Result: Auto-Blogger now generates proper English summaries from Hacker News articles

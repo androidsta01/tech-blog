@@ -520,5 +520,11 @@
         "time": "18:30:00",
         "description": "Auto-Blogger 의존성 수정: numpy 및 punkt_tab 추가, 요약 기능 정상화 완료",
         "model": "Claude Sonnet 4.5"
+    },
+    {
+        "date": "2026-01-27",
+        "time": "18:50:00",
+        "description": "Auto-Blogger 대폭 개선: 한국어 번역 추가 (googletrans), 프로그래밍 전용 필터링 강화, 품질 검증 로직 적용",
+        "model": "Claude Sonnet 4.5"
     }
 ]
