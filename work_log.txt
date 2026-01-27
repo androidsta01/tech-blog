@@ -24,3 +24,18 @@
   - Updated 'assets/history.json' with fix details
   - Pushed to main branch successfully
 - Result: Auto-Blogger now generates proper English summaries from Hacker News articles
+
+[2026-01-27 18:50] Auto-Blogger Enhancement: Korean Translation & Quality Filtering
+- Added Korean Translation:
+  - Installed 'googletrans==4.0.0-rc1' library
+  - Translate both titles and summaries to Korean
+  - Example: "Porting 100k lines from TypeScript to Rust" → "한 달 안에 Claude Code를 사용하여 TypeScript에서 Rust로 100,000줄 포팅"
+- Strengthened Tech Filtering:
+  - Core programming keywords required (code, programming, git, api, framework, etc.)
+  - Exclude non-tech topics (airport, travel, etc.)
+  - Minimum score threshold: 100 upvotes
+- Added Validation Logic:
+  - Skip posts with failed summarization (< 50 chars)
+  - Detect and skip JavaScript errors/paywalls
+  - Abort if no valid posts generated
+- Result: Auto-generates high-quality Korean programming content hourly
