@@ -30,6 +30,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r scripts/requirements.txt
         python -m nltk.downloader punkt
+        python -m nltk.downloader punkt_tab
 
     - name: Run Auto Blogger Script
       run: python scripts/auto_blogger.py
