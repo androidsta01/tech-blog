@@ -502,5 +502,11 @@
         "time": "17:50:00",
         "description": "History UI 디자인 리파이닝: 모던 카드 스타일, SVG 아이콘, 타이포그래피 개선 적용",
         "model": "Gemini 3 Pro"
+    },
+    {
+        "date": "2026-01-27",
+        "time": "17:20:00",
+        "description": "Auto-Blogger 시스템 디버깅 완료: 스케줄러(Cron) 리프레시 및 자동 실행 정상화",
+        "model": "Gemini 3 Pro"
     }
 ]
