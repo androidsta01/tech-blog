@@ -74,22 +74,31 @@
       "category": "Posting/Unity"
     }
   ],
-  "Posting/Blog": [
-    {
-      "filename": "hosting-comparison.md",
-      "path": "posts/Posting/Blog/hosting-comparison.md",
-      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
-      "date": "2026-01-16",
-      "tags": [
-        "호스팅",
-        "GitHub Pages",
-        "무료",
-        "비교"
-      ],
-      "category": "Posting/Blog"
-    }
-  ],
   "Posting/Trend": [
+    {
+      "filename": "trend-2026-01-27-1718.md",
+      "path": "posts/Posting/Trend/trend-2026-01-27-1718.md",
+      "title": "Tech Trends Briefing (2026-01-27 17:18)",
+      "date": "2026-01-27",
+      "tags": [
+        "Trend",
+        "News",
+        "Auto"
+      ],
+      "category": "Posting/Trend"
+    },
+    {
+      "filename": "trend-2026-01-27-1811.md",
+      "path": "posts/Posting/Trend/trend-2026-01-27-1811.md",
+      "title": "Tech Trends Briefing (2026-01-27 18:11)",
+      "date": "2026-01-27",
+      "tags": [
+        "Trend",
+        "News",
+        "Auto"
+      ],
+      "category": "Posting/Trend"
+    },
     {
       "filename": "ai-enhanced-development.md",
       "path": "posts/Posting/Trend/ai-enhanced-development.md",
@@ -115,6 +124,21 @@
         "Auto"
       ],
       "category": "Posting/Trend"
+    }
+  ],
+  "Posting/Blog": [
+    {
+      "filename": "hosting-comparison.md",
+      "path": "posts/Posting/Blog/hosting-comparison.md",
+      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
+      "date": "2026-01-16",
+      "tags": [
+        "호스팅",
+        "GitHub Pages",
+        "무료",
+        "비교"
+      ],
+      "category": "Posting/Blog"
     }
   ]
 }

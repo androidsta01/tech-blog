@@ -508,5 +508,11 @@
         "time": "17:20:00",
         "description": "Auto-Blogger 시스템 디버깅 완료: 스케줄러(Cron) 리프레시 및 자동 실행 정상화",
         "model": "Gemini 3 Pro"
+    },
+    {
+        "date": "2026-01-27",
+        "time": "18:15:00",
+        "description": "Auto-Blogger 긴급 수정: 스케줄링 1시간 간격 변경 및 리베이스 정책 적용, 테스트 포스팅 강제 생성",
+        "model": "Gemini 3 Pro"
     }
 ]
