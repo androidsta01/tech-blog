@@ -74,7 +74,35 @@
       "category": "Posting/Unity"
     }
   ],
+  "Posting/Blog": [
+    {
+      "filename": "hosting-comparison.md",
+      "path": "posts/Posting/Blog/hosting-comparison.md",
+      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
+      "date": "2026-01-16",
+      "tags": [
+        "호스팅",
+        "GitHub Pages",
+        "무료",
+        "비교"
+      ],
+      "category": "Posting/Blog"
+    }
+  ],
   "Posting/Trend": [
+    {
+      "filename": "trend-2026-01-27-1003.md",
+      "path": "posts/Posting/Trend/trend-2026-01-27-1003.md",
+      "title": "기술 트렌드 브리핑 (2026-01-27 10:03)",
+      "date": "2026-01-27",
+      "tags": [
+        "Trend",
+        "Programming",
+        "Tech",
+        "Auto"
+      ],
+      "category": "Posting/Trend"
+    },
     {
       "filename": "trend-2026-01-27-1848.md",
       "path": "posts/Posting/Trend/trend-2026-01-27-1848.md",
@@ -101,21 +129,6 @@
         "Vibe Engineering"
       ],
       "category": "Posting/Trend"
-    }
-  ],
-  "Posting/Blog": [
-    {
-      "filename": "hosting-comparison.md",
-      "path": "posts/Posting/Blog/hosting-comparison.md",
-      "title": "기술 블로그 호스팅, 어디서 해야 할까?",
-      "date": "2026-01-16",
-      "tags": [
-        "호스팅",
-        "GitHub Pages",
-        "무료",
-        "비교"
-      ],
-      "category": "Posting/Blog"
     }
   ]
 }
