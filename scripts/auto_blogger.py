@@ -14,8 +14,10 @@ import nltk
 # NLTK setup for CI/CD
 try:
     nltk.data.find('tokenizers/punkt')
+    nltk.data.find('tokenizers/punkt_tab')
 except LookupError:
     nltk.download('punkt')
+    nltk.download('punkt_tab')
 
 def fetch_hacker_news_top_stories(limit=3):
     """Fetch top stories from Hacker News API"""
