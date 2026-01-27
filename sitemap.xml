@@ -96,6 +96,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://androidsta01.github.io/tech-blog/?post=posts/Posting/Trend/trend-2026-01-27-2050.md</loc>
+        <lastmod>2026-01-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://androidsta01.github.io/tech-blog/?post=posts/Posting/Trend/ai-enhanced-development.md</loc>
         <lastmod>2026-01-26</lastmod>
         <changefreq>weekly</changefreq>
