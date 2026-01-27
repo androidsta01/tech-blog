@@ -3,6 +3,7 @@ name: Daily Tech Trend Post
 on:
   schedule:
     # Runs every 10 minutes
+    # Runs every 10 minutes (Timezone: UTC)
     - cron: '*/10 * * * *'
   workflow_dispatch:
 
