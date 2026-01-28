@@ -91,6 +91,19 @@
   ],
   "Posting/Trend": [
     {
+      "filename": "trend-2026-01-28-1100.md",
+      "path": "posts/Posting/Trend/trend-2026-01-28-1100.md",
+      "title": "기술 트렌드 브리핑 (2026-01-28 11:00)",
+      "date": "2026-01-28",
+      "tags": [
+        "Trend",
+        "Programming",
+        "Tech",
+        "Auto"
+      ],
+      "category": "Posting/Trend"
+    },
+    {
       "filename": "trend-2026-01-28-0555.md",
       "path": "posts/Posting/Trend/trend-2026-01-28-0555.md",
       "title": "기술 트렌드 브리핑 (2026-01-28 05:55)",
