@@ -526,5 +526,11 @@
         "time": "18:50:00",
         "description": "Auto-Blogger 대폭 개선: 한국어 번역 추가 (googletrans), 프로그래밍 전용 필터링 강화, 품질 검증 로직 적용",
         "model": "Claude Sonnet 4.5"
+    },
+    {
+        "date": "2026-01-29",
+        "time": "23:25:00",
+        "description": "Auto-Blogger 기능 제거 및 자동 생성 포스트 전체 삭제 (사용자 요청)",
+        "model": "Claude Sonnet 4.5"
     }
 ]
